@@ -1,0 +1,81 @@
+name: banboo_store
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.2
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_sign_in: ^6.2.2
+  http: ^1.2.2
+  image_picker: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+ 
+  flutter_lints: ^5.0.0
+
+
+
+
+flutter:
+
+  
+  uses-material-design: true
+
+  assets:
+    - assets/ui_component/logo.png
+    - assets/ui_component/background.png
+    - assets/ui_component/login_char.png
+    - assets/ui_component/google.png
+    - assets/ui_component/facebook.png
+    - assets/ui_component/x.png
+    - assets/ui_component/signup_char.png
+    - assets/ui_component/insert.png
+    - assets/ui_component/trash-can.png
+    - assets/ui_component/refresh.png
+    - assets/ui_component/poster-1.png
+    - assets/ui_component/poster-2.png
+    - assets/ui_component/poster-3.png
+    - assets/ui_component/market.png
+    - assets/ui_component/checklist.png
+    - assets/ui_component/profile-user.png
+    - assets/ui_component/share.png
+    - assets/ui_component/market-white.png
+    - assets/ui_component/market-red.png
+
+    #character detail icon
+    - assets/ui_component/water-drop.png
+    - assets/ui_component/raise-hand.png
+    - assets/ui_component/shield-1.png
+    - assets/ui_component/meteorite.png
+    - assets/ui_component/explosion.png
+    - assets/ui_component/shield.png
+    - assets/ui_component/anomaly.png
+    - assets/ui_component/element.png
+
+    
+
+ 
+  fonts:
+    - family: HG-medium
+      fonts:
+        - asset: assets/fonts/Medium.otf
+    
+    - family: HG-bold
+      fonts:
+        - asset: assets/fonts/Bold.otf
+
+    - family: HG-reg
+      fonts:
+        - asset: assets/fonts/Regular.otf
+
