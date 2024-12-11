@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 // const { get } = require('./banboos');
 
-function generateToken(user){
+function generateToken(user) {
   var payload = {
     id: user.id,
     username: user.username,
@@ -49,10 +49,10 @@ router.post('/login', function (req, res, next) {
   // QUERY
   connection.query("SELECT * FROM msaccount WHERE email = ? AND password = ?", [email, password], function (err, results) {
 
-    if(err) throw err;
-    if(results.length === 0){
+    if (err) throw err;
+    if (results.length === 0) {
       return res.status(403).send;
-    } else{
+    } else {
       var user = results[0];
       var token = generateToken(user);
 
@@ -70,64 +70,9 @@ router.post('/login', function (req, res, next) {
   });
 });
 
-router.get('/role/:email/:password', function (req, res, next) {
-  var email = req.params.email;
-  var password = req.params.password;
-  var connection = mysql.createConnection(opt);
-
-  connection.connect();
-
-  // QUERY
-  connection.query("SELECT role FROM msaccount WHERE email = ? AND password = ?", [email, password], function (err, results) {
-    connection.end();
-
-    if (err) {
-      return res.status(500).json(err); //Return Error dengan HTTP status 500
-    }
-
-    return res.status(200).json(results);
-  });
-});
-
-// router.get('/:id/show/username', function (req, res, next) {
-//   var id = req.params.id;
-//   var connection = mysql.createConnection(opt);
-
-//   connection.connect();
-
-//   // QUERY
-//   connection.query("SELECT username FROM msaccount WHERE id = ?", [parseInt(id)], function (err, results) {
-//     connection.end();
-
-//     if (err) {
-//       return res.status(500).json(err); //Return Error dengan HTTP status 500
-//     }
-
-//     return res.status(200).json(results);
-//   });
-// });
-
-router.get('/:id/show/fullname-username', function (req, res, next) {
-  var id = req.params.id;
-  var connection = mysql.createConnection(opt);
-
-  connection.connect();
-
-  // QUERY
-  connection.query("SELECT fullname, username FROM msaccount WHERE id = ?", [parseInt(id)], function (err, results) {
-    connection.end();
-
-    if (err) {
-      return res.status(500).json(err); //Return Error dengan HTTP status 500
-    }
-
-    return res.status(200).json(results);
-  });
-});
-
 router.post('/insert', function (req, res, next) {
 
-  var {fullname, username, email, password, role} = req.body;
+  var { fullname, username, email, password, role } = req.body;
 
   var connection = mysql.createConnection(opt);
 
